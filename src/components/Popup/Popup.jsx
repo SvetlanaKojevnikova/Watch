@@ -1,5 +1,26 @@
+import axios from "../../axios";
 import { RxCross2 } from "react-icons/rx";
-const Popup = ({active, setActive}) => {
+import { toast } from "react-toastify";
+
+const Popup = ({ active, setActive, getAllProducts }) => {
+  const addProductHandler = (e) => {
+    e.preventDefault();
+    axios
+      .post("/products", {
+        image: e.target[0].value,
+        title: e.target[1].value,
+        price: e.target[2].value,
+      })
+      .then(() => {
+        getAllProducts();
+        setActive(false);
+        toast("Ты успешно добавил продукт");
+        e.target[0].value = "";
+        e.target[1].value = "";
+        e.target[2].value = "";
+      })
+      .catch(() => toast("Ты не смог добавить продукт"));
+  };
   return (
     <div
       onClick={(e) => {
@@ -9,7 +30,7 @@ const Popup = ({active, setActive}) => {
       }}
       className={`overlay ${active ? "overlay_active" : ""}`}
     >
-      <form className="popup">
+      <form className="popup" onSubmit={(e) => addProductHandler(e)}>
         <span onClick={() => setActive(false)} className="popup__cross">
           <RxCross2 />
         </span>

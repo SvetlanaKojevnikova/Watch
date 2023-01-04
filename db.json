@@ -1,89 +1,100 @@
 {
-   "products": [
-        {
-          "id": 1,
-          "image": "./products/Airpods.png",
-          "title": "Airpods",
-          "price": 199.0
-        },
-        {
-          "id": 2,
-          "image": "./products/Iphone.png",
-          "title": "Iphone HR",
-          "price": 799.0
-        },
-        {
-          "id": 4,
-          "image": "./products/AppleTv.png",
-          "title": "Apple Tv 4K",
-          "price": 179.0
-        },
-        {
-          "id": 3,
-          "image": "./products/AppleCard.png",
-          "title": "Apple Card",
-          "price": 0
-        },
-        {
-          "id": 5,
-          "image": "./products/Airpods.png",
-          "title": "Airpods",
-          "price": 199.0
-        },
-        {
-          "id": 6,
-          "image":  "./products/Iphone.png",
-          "title": "Iphone HR",
-          "price": 799.0
-        },
-        {
-          "id": 8,
-          "image": "./products/AppleTv.png",
-          "title": "Apple Tv 4K",
-          "price": 179.0
-        },
-        {
-        "id": 7,
-        "image": "./products/AppleCard.png",
-        "title": "Apple Card",
-         "price": 0
-        },
-        {
-        "id": 9,
-        "image": "./products/Airpods.png",
-        "title": "Airpods",
-        "price": 199.0
-        }
-        ,
+  "products": [
     {
-        "id": 10,
-        "image":  "./products/Iphone.png",
-        "title": "Iphone HR",
-        "price": 799.0
-        },
-        {
-        "id": 12,
-        "image": "./products/AppleTv.png",
-        "title": "Apple Tv 4K",
-        "price": 179.0
-        },
-        {
-          "id": 11,
-          "image": "./products/AppleCard.png",
-          "title": "Apple Card",
-          "price": 0
-        },
-        {
-          "id": 13,
-          "image": "./products/Airpods.png",
-          "title": "Airpods",
-          "price": 199.0
-        },
-        {
-          "id": 14,
-          "image": "./products/Iphone.png",
-          "title": "Iphone HR",
-          "price": 799.0
-        }
-      ]
+      "id": 1,
+      "image": "./products/Airpods.png",
+      "title": "Airpods",
+      "price": 199
+    },
+    {
+      "id": 2,
+      "image": "./products/Iphone.png",
+      "title": "Iphone HR",
+      "price": 799
+    },
+    {
+      "id": 4,
+      "image": "./products/AppleTv.png",
+      "title": "Apple Tv 4K",
+      "price": 179
+    },
+    {
+      "id": 3,
+      "image": "./products/AppleCard.png",
+      "title": "Apple Card",
+      "price": 0
+    },
+    {
+      "id": 5,
+      "image": "./products/Airpods.png",
+      "title": "Airpods",
+      "price": 199
+    },
+    {
+      "id": 6,
+      "image": "./products/Iphone.png",
+      "title": "Iphone HR",
+      "price": 799
+    },
+    {
+      "id": 8,
+      "image": "./products/AppleTv.png",
+      "title": "Apple Tv 4K",
+      "price": 179
+    },
+    {
+      "id": 7,
+      "image": "./products/AppleCard.png",
+      "title": "Apple Card",
+      "price": 0
+    },
+    {
+      "id": 9,
+      "image": "./products/Airpods.png",
+      "title": "Airpods",
+      "price": 199
+    },
+    {
+      "id": 10,
+      "image": "./products/Iphone.png",
+      "title": "Iphone HR",
+      "price": 799
+    },
+    {
+      "id": 12,
+      "image": "./products/AppleTv.png",
+      "title": "Apple Tv 4K",
+      "price": 179
+    },
+    {
+      "id": 11,
+      "image": "./products/AppleCard.png",
+      "title": "Apple Card",
+      "price": 0
+    },
+    {
+      "id": 13,
+      "image": "./products/Airpods.png",
+      "title": "Airpods",
+      "price": 199
+    },
+    {
+      "image": "https://spng.pngfind.com/pngs/s/180-1803624_2014-apple-watch-hd-png-download.png",
+      "title": "Apple Watch Png",
+      "price": "300",
+      "id": 17
+    },
+    {
+      "image": "https://www.pngfind.com/pngs/m/612-6123862_depending-on-how-many-favorites-you-have-that.png",
+      "title": "Apple Watch PNG",
+      "price": "300",
+      "id": 19
+    },
+    {
+      "image": "https://www.pngfind.com/pngs/m/38-380490_apple-watch-series-4-series-4-sport-loop.png",
+      "title": "Apple Watch Series 4",
+      "price": "350",
+      "id": 20
+    }
+  ]
 }

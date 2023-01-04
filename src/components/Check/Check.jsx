@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Product from "./Product";
 import { useState } from "react";
 import Popup from "../Popup/Popup";
-import axios from "axios";
+import axios from "../../axios"
 
 const Check = () => {
   const [count, setCount] = useState(1);
@@ -16,10 +16,13 @@ const Check = () => {
     product.title.toUpperCase().includes(search.toUpperCase())
   ).length;
 
+  const getAllProducts=()=>{
+    axios('/products')
+    .then(({data})=>setProducts(data.reverse()))
+  }
 
   useEffect(()=>{
-    axios('http://localhost:3000/products')
-    .then(({data})=>setProducts(data))
+   getAllProducts()
   },[])
   
 
@@ -84,9 +87,8 @@ const Check = () => {
               .map((product, id) => (
                 <React.Fragment key={product.id}>
                   <Product
-                    title={product.title}
-                    price={product.price}
-                    image={product.image}
+                  getAllProducts={getAllProducts}
+                    product={product}
                   />
                 </React.Fragment>
               ))}
@@ -131,7 +133,7 @@ const Check = () => {
           )}
         </div>
       </div>
-      <Popup active={active} setActive={setActive}/>
+      <Popup active={active} setActive={setActive} getAllProducts={getAllProducts}/>
     </section>
     
   );
