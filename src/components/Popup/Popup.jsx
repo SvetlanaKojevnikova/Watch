@@ -3,7 +3,7 @@ const Popup = ({active, setActive}) => {
   return (
     <div
       onClick={(e) => {
-        if (e.target.className.includes("active")) {
+        if (e.target.classList.contains("overlay")) {
           setActive(false);
         }
       }}
@@ -19,7 +19,7 @@ const Popup = ({active, setActive}) => {
         <input className="popup__input" id="title" type="text" />
         <label className="popup__label">Цена:</label>
         <input className="popup__input" id="price" type="text" />
-        <button className="popup__btn" type="button">
+        <button className="popup__btn" type="submit">
           Добавить продукт
         </button>
       </form>

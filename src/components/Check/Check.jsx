@@ -1,22 +1,34 @@
-import React from "react";
-import { products } from "../../products";
+import React, { useEffect } from "react";
+
 import Product from "./Product";
 import { useState } from "react";
 import Popup from "../Popup/Popup";
+import axios from "axios";
 
 const Check = () => {
   const [count, setCount] = useState(1);
   const [search, setSearch] = useState("");
   const [active,setActive]=useState(false)
+  const [products,setProducts]=useState([])
 
 
   const searchProductsFilterAfter = products.filter((product, id) =>
     product.title.toUpperCase().includes(search.toUpperCase())
   ).length;
 
+
+  useEffect(()=>{
+    axios('http://localhost:3000/products')
+    .then(({data})=>setProducts(data))
+  },[])
+  
+
+ 
+
   return (
     <section className="check">
       <div className="container">
+        
         <div className="check__contant">
           <div className="check__top">
             <h2 className="check__title">Check also</h2>
