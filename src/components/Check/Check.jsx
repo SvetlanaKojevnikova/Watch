@@ -4,12 +4,14 @@ import Product from "./Product";
 import { useState } from "react";
 import Popup from "../Popup/Popup";
 import axios from "../../axios"
+import SortSelect from "../SortSelect/SortSelect";
 
-const Check = () => {
+const Check = ({basket,setBasket}) => {
   const [count, setCount] = useState(1);
   const [search, setSearch] = useState("");
   const [active,setActive]=useState(false)
   const [products,setProducts]=useState([])
+  const[sort,setSort]=useState('')
 
 
   const searchProductsFilterAfter = products.filter((product, id) =>
@@ -36,6 +38,7 @@ const Check = () => {
           <div className="check__top">
             <h2 className="check__title">Check also</h2>
             <button className="popup__btn" type="button" onClick={()=>setActive(true)}>Добавить товар</button>
+            <SortSelect sort={sort} setSort={setSort}/>
             <div   className="check__rigth">
               <input
                 value={search}
@@ -80,7 +83,15 @@ const Check = () => {
           </div>
           <div className="check__row">
             {products
-              .filter((product, id) =>
+              .sort((a,b)=>{
+                if(sort=="small"){
+                  return a.price-b.price
+                }
+                if(sort=="big"){
+                  return b.price-a.price
+                }
+              
+              }).filter((product, id) =>
                 product.title.toUpperCase().includes(search.toUpperCase())
               )
               .filter((product, id) => id < 4 * count)
@@ -89,6 +100,7 @@ const Check = () => {
                   <Product
                   getAllProducts={getAllProducts}
                     product={product}
+                    basket={basket} setBasket={setBasket}
                   />
                 </React.Fragment>
               ))}

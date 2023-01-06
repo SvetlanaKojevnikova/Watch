@@ -4,15 +4,17 @@ import Check from "./components/Check/Check"
 import "./style.scss"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useState } from "react";
 
 
 function App() {
+  const[basket,setBasket]=useState([])
  
   
   return (
     <div className="App">
-      <Header/>
-     <main><Check/></main>
+      <Header basket={basket} setBasket={setBasket}/>
+     <main><Check basket={basket} setBasket={setBasket}/></main>
      <Footer/>
      <ToastContainer 
      position= "bottom-left"

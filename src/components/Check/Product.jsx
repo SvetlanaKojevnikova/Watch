@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import axios from "../../axios";
 
-const Product = ({getAllProducts, product}) => {
+const Product = ({getAllProducts, product,basket,setBasket}) => {
   const {id,title,price,image }=product
 
   const deleteProductHandler=(id)=>{
@@ -17,7 +17,7 @@ const Product = ({getAllProducts, product}) => {
         {price > 0 ? `$${price}.00` : "Free*"}
       </p>
       <div className="check__card-buttons">
-        <button className="check__card-button" type="button">
+        <button disabled={basket.findIndex((el)=>el.id===product.id)>-1} onClick={()=>setBasket([...basket,product])} className="check__card-button" type="button">
           {price > 0 ? "Buy" : "Apply"}{" "}
         </button>
         <button onClick={()=>deleteProductHandler(id)}
