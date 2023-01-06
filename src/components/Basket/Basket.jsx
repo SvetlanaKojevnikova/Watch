@@ -1,9 +1,25 @@
+import axios from "../../axios";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Basket = ({ active, setActive, basket, setBasket }) => {
   const [order, setOrder] = useState(false);
   const[name,setName]=useState('')
   const[phone,setPhone]=useState('')
+  const addOrder=()=>{
+    axios.post('/orders',{
+      name:name,
+      phone:phone,
+      order:basket
+    }).then(()=>{
+      setActive(false)
+      setName(''),
+      setPhone(''),
+      setBasket([]),
+      toast('Заказ успешно совершен')
+
+    }).catch((err)=>toast("Не удалось совершить покупку :("))
+  }
 
   console.log(basket);
   return (
@@ -61,11 +77,8 @@ const Basket = ({ active, setActive, basket, setBasket }) => {
 
           <button onClick={()=>{
             if (!order){setOrder(true)}else{
-              console.log({
-                name:name,
-                phone:phone,
-                order:basket,
-              })}
+              addOrder()
+            }
              
           }} className="popup2__total-btn">{order?"Заказать":"Оформить заказ"}</button>
         </div>

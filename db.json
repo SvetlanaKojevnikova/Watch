@@ -96,6 +96,26 @@
       "price": "350",
       "id": 20
     }
+  ],
+  "orders": [
+    {
+      "name": "Светлана",
+      "phone": "27345895",
+      "order": [
+        {
+          "image": "https://www.pngfind.com/pngs/m/38-380490_apple-watch-series-4-series-4-sport-loop.png",
+          "title": "Apple Watch Series 4",
+          "price": "350",
+          "id": 20
+        },
+        {
+          "image": "https://spng.pngfind.com/pngs/s/180-1803624_2014-apple-watch-hd-png-download.png",
+          "title": "Apple Watch Png",
+          "price": "300",
+          "id": 17
+        }
+      ],
+      "id": 1
+    }
   ]
- 
 }
